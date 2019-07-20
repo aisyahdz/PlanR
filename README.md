@@ -1,0 +1,2 @@
+# PlanR
+Planner in iOS
