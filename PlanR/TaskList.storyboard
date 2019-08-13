@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWo-a0-ycP">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task List View Controller-->
+        <scene sceneID="cW5-Dc-eI5">
+            <objects>
+                <viewController id="NWo-a0-ycP" customClass="TaskListViewController" customModule="PlanR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5qQ-Mv-Nzv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oec-fX-oIH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <state key="normal" title="Add New Task"/>
+                                <connections>
+                                    <action selector="addNewTask:" destination="NWo-a0-ycP" eventType="touchUpInside" id="M6i-ff-RAd"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-0Y-Tv2">
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="J2i-Kp-Kqv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J2i-Kp-Kqv" id="eqJ-5X-iHs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NWo-a0-ycP" id="J9G-FD-cgJ"/>
+                                    <outlet property="delegate" destination="NWo-a0-ycP" id="E4t-xz-z4Z"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="bottom" secondItem="zHv-th-JkM" secondAttribute="bottom" id="2wG-Bp-bUH"/>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="trailing" secondItem="zHv-th-JkM" secondAttribute="trailing" id="GNe-Lg-BGn"/>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="leading" secondItem="zHv-th-JkM" secondAttribute="leading" id="Ziz-iw-BO9"/>
+                            <constraint firstItem="oec-fX-oIH" firstAttribute="leading" secondItem="zHv-th-JkM" secondAttribute="leading" id="aEo-Re-jUB"/>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="top" secondItem="oec-fX-oIH" secondAttribute="bottom" id="cq8-yE-zEp"/>
+                            <constraint firstItem="oec-fX-oIH" firstAttribute="top" secondItem="zHv-th-JkM" secondAttribute="top" id="fYO-9A-Asm"/>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="top" secondItem="oec-fX-oIH" secondAttribute="bottom" id="gwh-ky-IsE"/>
+                            <constraint firstItem="zHv-th-JkM" firstAttribute="trailing" secondItem="oec-fX-oIH" secondAttribute="trailing" id="ms4-PA-DMu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zHv-th-JkM"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskTableView" destination="Hf9-0Y-Tv2" id="uHp-OY-5Ai"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZE-NM-MI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="7"/>
+        </scene>
+    </scenes>
+</document>
