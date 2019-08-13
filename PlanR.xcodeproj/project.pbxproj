@@ -14,6 +14,9 @@
 		C86D5D1222E36E08001EB91D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D1022E36E08001EB91D /* LaunchScreen.storyboard */; };
 		C86D5D1D22E36E08001EB91D /* PlanRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D1C22E36E08001EB91D /* PlanRTests.swift */; };
 		C86D5D2822E36E08001EB91D /* PlanRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D2722E36E08001EB91D /* PlanRUITests.swift */; };
+		C86D5D3C22F09CA1001EB91D /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */; };
+		C86D5D3E22F09CEA001EB91D /* TaskReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3D22F09CEA001EB91D /* TaskReminder.swift */; };
+		C86D5D4022FCEBD7001EB91D /* TaskListManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C86D5D2322E36E08001EB91D /* PlanRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D5D2722E36E08001EB91D /* PlanRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRUITests.swift; sourceTree = "<group>"; };
 		C86D5D2922E36E08001EB91D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListManager.swift; sourceTree = "<group>"; };
+		C86D5D3D22F09CEA001EB91D /* TaskReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReminder.swift; sourceTree = "<group>"; };
+		C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,41 @@
 				C86D5D2922E36E08001EB91D /* Info.plist */,
 			);
 			path = PlanRUITests;
+			sourceTree = "<group>";
+		};
+		C86D5D3722EFCCB7001EB91D /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				C86D5D3A22EFD0A7001EB91D /* Achievement */,
+				C86D5D3922EFD067001EB91D /* Reminder */,
+				C86D5D3822EFCF1E001EB91D /* Task */,
+			);
+			name = Contexts;
+			path = PlanR/Contexts;
+			sourceTree = "<group>";
+		};
+		C86D5D3822EFCF1E001EB91D /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */,
+				C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		C86D5D3922EFD067001EB91D /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				C86D5D3D22F09CEA001EB91D /* TaskReminder.swift */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		C86D5D3A22EFD0A7001EB91D /* Achievement */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Achievement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86D5D3E22F09CEA001EB91D /* TaskReminder.swift in Sources */,
 				C86D5D0A22E36E06001EB91D /* ViewController.swift in Sources */,
+				C86D5D3C22F09CA1001EB91D /* TaskListManager.swift in Sources */,
 				C86D5D0822E36E06001EB91D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86D5D4022FCEBD7001EB91D /* TaskListManagerTest.swift in Sources */,
 				C86D5D1D22E36E08001EB91D /* PlanRTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
