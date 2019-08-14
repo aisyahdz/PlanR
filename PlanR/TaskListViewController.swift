@@ -8,9 +8,9 @@
 
 import UIKit
 
+var taskList = ["Mengerjakan Tugas", "Tidur", "Mandi"]
+
 class TaskListViewController: UIViewController {
-    
-    var taskList = ["Mengerjakan Tugas", "Tidur", "Mandi"]
     
     @IBOutlet weak var taskTableView: UITableView!
     @IBAction func addNewTask(_ sender: UIButton) {
@@ -48,7 +48,7 @@ extension TaskListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.taskList.remove(at: indexPath.row)
+            taskList.remove(at: indexPath.row)
             taskTableView.reloadData()
         }
     }
