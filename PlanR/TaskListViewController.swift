@@ -13,9 +13,11 @@ var taskList = ["Mengerjakan Tugas", "Tidur", "Mandi"]
 class TaskListViewController: UIViewController {
     
     @IBOutlet weak var taskTableView: UITableView!
+
     @IBAction func addNewTask(_ sender: UIButton) {
         taskList.append("")
         taskTableView.reloadData()
+        
     }
     
     override func viewDidLoad() {

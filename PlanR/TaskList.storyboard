@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWo-a0-ycP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OC9-4a-imh">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,15 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oec-fX-oIH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
-                                <state key="normal" title="Add New Task"/>
-                                <connections>
-                                    <action selector="addNewTask:" destination="NWo-a0-ycP" eventType="touchUpInside" id="M6i-ff-RAd"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-0Y-Tv2">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="J2i-Kp-Kqv">
@@ -49,21 +42,42 @@
                             <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="bottom" secondItem="zHv-th-JkM" secondAttribute="bottom" id="2wG-Bp-bUH"/>
                             <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="trailing" secondItem="zHv-th-JkM" secondAttribute="trailing" id="GNe-Lg-BGn"/>
                             <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="leading" secondItem="zHv-th-JkM" secondAttribute="leading" id="Ziz-iw-BO9"/>
-                            <constraint firstItem="oec-fX-oIH" firstAttribute="leading" secondItem="zHv-th-JkM" secondAttribute="leading" id="aEo-Re-jUB"/>
-                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="top" secondItem="oec-fX-oIH" secondAttribute="bottom" id="cq8-yE-zEp"/>
-                            <constraint firstItem="oec-fX-oIH" firstAttribute="top" secondItem="zHv-th-JkM" secondAttribute="top" id="fYO-9A-Asm"/>
-                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="top" secondItem="oec-fX-oIH" secondAttribute="bottom" id="gwh-ky-IsE"/>
-                            <constraint firstItem="zHv-th-JkM" firstAttribute="trailing" secondItem="oec-fX-oIH" secondAttribute="trailing" id="ms4-PA-DMu"/>
+                            <constraint firstItem="Hf9-0Y-Tv2" firstAttribute="top" secondItem="zHv-th-JkM" secondAttribute="top" id="sql-XW-Kbf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zHv-th-JkM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DGI-e1-K8G">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xup-hY-mE0">
+                            <connections>
+                                <action selector="addNewTask:" destination="NWo-a0-ycP" id="87M-jv-YaC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="taskTableView" destination="Hf9-0Y-Tv2" id="uHp-OY-5Ai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZE-NM-MI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="7"/>
+            <point key="canvasLocation" x="881.15942028985512" y="6.6964285714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vk9-6a-NKl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OC9-4a-imh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qee-d5-SRV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NWo-a0-ycP" kind="relationship" relationship="rootViewController" id="FHs-5t-FJq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PqA-2a-5s1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28.985507246376812" y="6.6964285714285712"/>
         </scene>
     </scenes>
 </document>
