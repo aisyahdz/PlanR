@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		C86D5D0822E36E06001EB91D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D0722E36E06001EB91D /* AppDelegate.swift */; };
 		C86D5D0A22E36E06001EB91D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D0922E36E06001EB91D /* ViewController.swift */; };
-		C86D5D0D22E36E06001EB91D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D0B22E36E06001EB91D /* Main.storyboard */; };
 		C86D5D0F22E36E08001EB91D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D0E22E36E08001EB91D /* Assets.xcassets */; };
 		C86D5D1222E36E08001EB91D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D1022E36E08001EB91D /* LaunchScreen.storyboard */; };
 		C86D5D1D22E36E08001EB91D /* PlanRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D1C22E36E08001EB91D /* PlanRTests.swift */; };
 		C86D5D2822E36E08001EB91D /* PlanRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D2722E36E08001EB91D /* PlanRUITests.swift */; };
-		C86D5D3622E7E479001EB91D /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3522E7E479001EB91D /* TargetViewController.swift */; };
 		C86D5D3C22F09CA1001EB91D /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */; };
 		C86D5D3E22F09CEA001EB91D /* TaskReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3D22F09CEA001EB91D /* TaskReminder.swift */; };
 		C86D5D4022FCEBD7001EB91D /* TaskListManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */; };
@@ -44,7 +42,6 @@
 		C86D5D0422E36E06001EB91D /* PlanR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D5D0722E36E06001EB91D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86D5D0922E36E06001EB91D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C86D5D0C22E36E06001EB91D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C86D5D0E22E36E08001EB91D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C86D5D1122E36E08001EB91D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C86D5D1322E36E08001EB91D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 		C86D5D2322E36E08001EB91D /* PlanRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D5D2722E36E08001EB91D /* PlanRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRUITests.swift; sourceTree = "<group>"; };
 		C86D5D2922E36E08001EB91D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C86D5D3522E7E479001EB91D /* TargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
 		C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListManager.swift; sourceTree = "<group>"; };
 		C86D5D3D22F09CEA001EB91D /* TaskReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReminder.swift; sourceTree = "<group>"; };
 		C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListManagerTest.swift; sourceTree = "<group>"; };
@@ -114,11 +110,9 @@
 			children = (
 				C86D5D0722E36E06001EB91D /* AppDelegate.swift */,
 				C86D5D0922E36E06001EB91D /* ViewController.swift */,
-				C86D5D0B22E36E06001EB91D /* Main.storyboard */,
 				C86D5D0E22E36E08001EB91D /* Assets.xcassets */,
 				C86D5D1022E36E08001EB91D /* LaunchScreen.storyboard */,
 				C86D5D1322E36E08001EB91D /* Info.plist */,
-				C86D5D3522E7E479001EB91D /* TargetViewController.swift */,
 				C86D5D4122FCF852001EB91D /* TaskTableViewCell.swift */,
 				C86D5D43230224D7001EB91D /* TaskList.storyboard */,
 				C86D5D4523022555001EB91D /* TaskListViewController.swift */,
@@ -286,7 +280,6 @@
 				C86D5D1222E36E08001EB91D /* LaunchScreen.storyboard in Resources */,
 				C86D5D44230224D7001EB91D /* TaskList.storyboard in Resources */,
 				C86D5D0F22E36E08001EB91D /* Assets.xcassets in Resources */,
-				C86D5D0D22E36E06001EB91D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +308,6 @@
 				C86D5D3E22F09CEA001EB91D /* TaskReminder.swift in Sources */,
 				C86D5D0A22E36E06001EB91D /* ViewController.swift in Sources */,
 				C86D5D4222FCF852001EB91D /* TaskTableViewCell.swift in Sources */,
-				C86D5D3622E7E479001EB91D /* TargetViewController.swift in Sources */,
 				C86D5D3C22F09CA1001EB91D /* TaskListManager.swift in Sources */,
 				C86D5D0822E36E06001EB91D /* AppDelegate.swift in Sources */,
 			);
@@ -354,14 +346,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C86D5D0B22E36E06001EB91D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C86D5D0C22E36E06001EB91D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C86D5D1022E36E08001EB91D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
