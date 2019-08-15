@@ -17,12 +17,16 @@ class TaskListViewController: UIViewController {
     @IBAction func addNewTask(_ sender: UIButton) {
         taskList.append("")
         taskTableView.reloadData()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.taskTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "taskTableViewCell")
+        navigationItem.title = "Task"
+        removeFooterCell()
+    }
+    
+    private func removeFooterCell(){
         taskTableView.tableFooterView = UIView()
     }
 }
