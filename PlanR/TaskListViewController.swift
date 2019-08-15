@@ -22,13 +22,7 @@ class TaskListViewController: UIViewController {
         super.viewDidLoad()
         self.taskTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "taskTableViewCell")
         taskTableView.tableFooterView = UIView()
-
     }
-    
-}
-
-extension TaskListViewController: UITableViewDelegate {
-    
 }
 
 extension TaskListViewController: UITableViewDataSource {
@@ -37,12 +31,9 @@ extension TaskListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = self.taskTableView.dequeueReusableCell(withIdentifier: "taskCell")
-//        cell?.textLabel?.text = taskList[indexPath.row]
-//        return cell ?? UITableViewCell()
-        
         let cell = self.taskTableView.dequeueReusableCell(withIdentifier: "taskTableViewCell") as! TaskTableViewCell
         cell.task = taskList[indexPath.row]
+        cell.taskView.tag = indexPath.row
         return cell
     }
     

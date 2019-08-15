@@ -21,20 +21,11 @@ class TaskTableViewCell: UITableViewCell{
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        self.reloadInputViews()
-        taskView.delegate = self
-    }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(taskView)
+        taskView.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,10 +35,8 @@ class TaskTableViewCell: UITableViewCell{
 }
 
 extension TaskTableViewCell : UITextViewDelegate {
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return textView.resignFirstResponder()
-    }
     func textViewDidEndEditing(_ textView: UITextView) {
-        taskList.append(textView.text)
+        taskList[textView.tag] = textView.text
+        taskView.reloadInputViews()
     }
 }
