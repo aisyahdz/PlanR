@@ -13,6 +13,7 @@ class TaskTableViewCell: UITableViewCell{
     var task: String? {
         didSet{
             taskView.text = task
+            taskView.becomeFirstResponder()
         }
     }
     
