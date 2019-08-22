@@ -47,6 +47,7 @@ extension TaskListViewController: UITableViewDataSource {
         if editingStyle == .delete {
             taskList.remove(at: indexPath.row)
             taskTableView.reloadData()
+            taskTableView.reloadData()
         }
     }
     
