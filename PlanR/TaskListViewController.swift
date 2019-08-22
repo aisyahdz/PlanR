@@ -8,14 +8,14 @@
 
 import UIKit
 
-var taskList = ["Mengerjakan Tugas", "Tidur", "Mandi"]
+var taskList: TaskListManager = TaskListManager()
 
 class TaskListViewController: UIViewController {
     
     @IBOutlet weak var taskTableView: UITableView!
 
     @IBAction func addNewTask(_ sender: UIButton) {
-        taskList.append("")
+        taskList.add("")
         taskTableView.reloadData()
     }
     
@@ -38,15 +38,15 @@ extension TaskListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.taskTableView.dequeueReusableCell(withIdentifier: "taskTableViewCell") as! TaskTableViewCell
-        cell.task = taskList[indexPath.row]
+        cell.task = taskList.getItem(index: indexPath.row)
         cell.taskView.tag = indexPath.row
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            taskList.remove(at: indexPath.row)
             taskTableView.reloadData()
+            taskList.deleteItem(index: indexPath.row)
             taskTableView.reloadData()
         }
     }

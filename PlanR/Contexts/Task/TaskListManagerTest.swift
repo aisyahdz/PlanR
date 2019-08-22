@@ -39,16 +39,16 @@ class TaskListManagerTest: XCTestCase {
         taskList.add("Mandi")
         XCTAssertEqual(taskList.getItem(index: 1), "Mandi")
         taskList.deleteItem(index: 1)
-        XCTAssertEqual(taskList.taskCount(), 1)
+        XCTAssertEqual(taskList.count, 1)
         
     }
     
     func testDeleteAllTask() {
         let taskList = TaskListManager()
         taskList.add("Mandi")
-        XCTAssertEqual(task[0], "Mandi")
+        XCTAssertEqual(taskList.getItem(index: 0), "Mandi")
         deleteAllTask()
-        XCTAssertTrue(task.isEmpty)
+        XCTAssertTrue(taskList.isEmpty())
         
     }
     

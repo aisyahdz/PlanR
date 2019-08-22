@@ -7,8 +7,12 @@
 //
 
 import Foundation
-var task = [String]()
+
+private var task = [String]()
 struct TaskListManager {
+    var count: Int {
+        return task.count
+    }
     func add(_ taskItem: String){
         task.append(taskItem)
     }
@@ -25,8 +29,8 @@ struct TaskListManager {
         task.remove(at: index)
     }
     
-    func taskCount() -> Int {
-        return task.count
+    func isEmpty() -> Bool {
+        return task.isEmpty
     }
     
 }

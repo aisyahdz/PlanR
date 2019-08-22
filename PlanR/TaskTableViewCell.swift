@@ -37,7 +37,7 @@ class TaskTableViewCell: UITableViewCell{
 
 extension TaskTableViewCell : UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        taskList[textView.tag] = textView.text
+        taskList.update(index: textView.tag, taskItem: textView.text)
         taskView.reloadInputViews()
     }
 }
