@@ -15,7 +15,7 @@ class TaskListViewController: UIViewController {
     @IBOutlet weak var taskTableView: UITableView!
 
     @IBAction func addNewTask(_ sender: UIButton) {
-        taskList.add("")
+//        taskList.add("")
         taskTableView.reloadData()
     }
     
@@ -38,7 +38,7 @@ extension TaskListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.taskTableView.dequeueReusableCell(withIdentifier: "taskTableViewCell") as! TaskTableViewCell
-        cell.task = taskList.getItem(index: indexPath.row)
+//        cell.task = taskList.getItem(index: indexPath.row)
         cell.taskView.tag = indexPath.row
         return cell
     }

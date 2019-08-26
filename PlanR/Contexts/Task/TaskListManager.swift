@@ -8,20 +8,28 @@
 
 import Foundation
 
-private var task = [String]()
+private var task  = [TaskItem]()
+
+struct TaskItem: Equatable {
+    let task: String
+    let dueDate: Date
+}
+
+
+
 struct TaskListManager {
     var count: Int {
         return task.count
     }
-    func add(_ taskItem: String){
+    func add(_ taskItem: TaskItem){
         task.append(taskItem)
     }
     
-    func update(index: Int, taskItem: String){
+    func update(index: Int, taskItem: TaskItem){
         task[index] = taskItem
     }
     
-    func getItem(index: Int) -> String {
+    func getItem(index: Int) -> TaskItem {
         return task[index]
     }
     
