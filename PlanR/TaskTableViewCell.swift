@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import EventKit
+
+protocol TaskViewCellDelegate: class {
+    func reloadData()
+}
 
 class TaskTableViewCell: UITableViewCell{
+    var calendarEvent = CalendarEvent()
     
     var task: String? {
         didSet{
@@ -16,28 +22,95 @@ class TaskTableViewCell: UITableViewCell{
             taskView.becomeFirstResponder()
         }
     }
+    @IBAction func addToCalendar(_ sender: UIButton) {
+        let eventStore = EKEventStore()        
+        if (EKEventStore.authorizationStatus(for: .event) != .authorized) {
+            eventStore.requestAccess(to: .event, completion:  { _,_ in
+                self.insertEvent(name: "Event1", to: "PlanR", store: eventStore)
+            })
+        } else {
+            self.insertEvent(name: "Event2", to: "PlanR", store: eventStore)
+        }
+    }
+    @IBOutlet weak var dateText: UILabel!
+    @IBOutlet weak var taskView: UITextView!
+    @IBOutlet weak var taskViewHeightConstraint: NSLayoutConstraint!
+    weak var delegate: TaskViewCellDelegate?
     
-    var taskView: UITextView = {
-        var textView = UITextView(frame: CGRect(x: 5, y: 0, width: 300, height: 25))
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
+    @IBAction func saveEvent(_ sender: Any) {
+        calendarEvent.insertEvent(name: taskView.text, to: "PlanR")
+        delegate?.reloadData()
+    }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.addSubview(taskView)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
         taskView.delegate = self
+        taskView.isScrollEnabled = false
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func newCalendar(name: String, store: EKEventStore) throws -> EKCalendar {
+        let newCalendar = EKCalendar(for: .event, eventStore: store)
+        let sourcesInEventStore = store.sources
+        newCalendar.source = sourcesInEventStore.filter { (source: EKSource) -> Bool in
+            source.sourceType == .local }.first!
+        newCalendar.title = name
+        try store.saveCalendar(newCalendar, commit: true)
+        return newCalendar
     }
+    
+    func getCalendar(name: String, store: EKEventStore) -> EKCalendar? {
+        let calendars = store.calendars(for: .event)
+        return calendars.filter{ $0.title == name}.first
+    }
+    
+    func getOrCreateCalendar(name: String, store: EKEventStore) throws -> EKCalendar {
+        if let calendar = getCalendar(name: name, store: store) {
+            return calendar
+        } else {
+            return try newCalendar(name: name, store: store)
+        }
+    }
+    
+    private func insertEvent(name: String, to calendarName: String, store: EKEventStore) {
+        let startDate = Date()
+        let endDate = startDate.addingTimeInterval(2 * 60 * 60)
+        
+        let event = EKEvent(eventStore: store)
+        event.calendar = try? getOrCreateCalendar(name: calendarName, store: store)
+        event.title = name
+        event.startDate = startDate
+        event.endDate = endDate
+        do {
+            try store.save(event, span: .thisEvent)
+            dateText.text = "Saved to PlanR Calendar"
+        }
+        catch {
+            print("Error saving event in calendar")
+            
+        }
+    }
+    
+    
 
 }
 
 extension TaskTableViewCell : UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-//        taskList.update(index: textView.tag, taskItem: textView.text)
-        taskView.reloadInputViews()
+//        taskList.update(index: textView.tag, taskItem: TaskItem(task: textView.text, dueDate: Date()))
+//        delegate?.reloadData()
+//        taskView.reloadInputViews()
     }
+    
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isContainingToday() {
+            dateText.text = "Hari ini"
+        } else {
+            dateText.text = ""
+        }
+    }
+    
 }
+

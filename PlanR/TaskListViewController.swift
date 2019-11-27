@@ -7,38 +7,63 @@
 //
 
 import UIKit
+import EventKit
 
 var taskList: TaskListManager = TaskListManager()
 
-class TaskListViewController: UIViewController {
+
+class TaskListViewController: UIViewController, TaskViewCellDelegate {
+    func reloadData() {
+        calendarEvent.getAllEvents(from: "PlanR")
+        extraRowCount = 0
+        taskTableView.reloadData()
+    }
+    
+    var calendarEvent = CalendarEvent()
+    var extraRowCount = 0
     
     @IBOutlet weak var taskTableView: UITableView!
 
     @IBAction func addNewTask(_ sender: UIButton) {
-//        taskList.add("")
+        extraRowCount = 1
+        taskTableView.reloadData()
+    }
+    
+    @IBAction func refreshEvent(_ sender: Any) {
+        calendarEvent.getAllEvents(from: "PlanR")
+        extraRowCount = 0
         taskTableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.taskTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "taskTableViewCell")
+
         navigationItem.title = "Task"
         removeFooterCell()
+        calendarEvent.getAllEvents(from: "PlanR")
     }
     
-    private func removeFooterCell(){
+    private func removeFooterCell() {
         taskTableView.tableFooterView = UIView()
     }
+  
+    
 }
 
 extension TaskListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskList.count
+        return calendarEvent.eventTitle.count + extraRowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.taskTableView.dequeueReusableCell(withIdentifier: "taskTableViewCell") as! TaskTableViewCell
-//        cell.task = taskList.getItem(index: indexPath.row)
+        cell.delegate = self
+        if indexPath.row == calendarEvent.eventTitle.count {
+            cell.task = ""
+        } else {
+            cell.task = calendarEvent.eventTitle[indexPath.row]
+        }
+        
         cell.taskView.tag = indexPath.row
         return cell
     }
@@ -46,11 +71,9 @@ extension TaskListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             taskTableView.reloadData()
-            taskList.deleteItem(index: indexPath.row)
             taskTableView.reloadData()
         }
     }
-    
     
 }
 

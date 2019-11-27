@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OC9-4a-imh">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OC9-4a-imh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +20,76 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="J2i-Kp-Kqv">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskTableViewCell" id="J2i-Kp-Kqv" customClass="TaskTableViewCell" customModule="PlanR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="91.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J2i-Kp-Kqv" id="eqJ-5X-iHs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your task here.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YA7-ij-EjQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="jUa-ZQ-Lki"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-zc-hQs">
+                                                    <rect key="frame" x="16" y="50.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="im3-0c-fIR"/>
+                                                        <constraint firstAttribute="width" constant="25" id="m80-w7-7lE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFK-n0-JgI">
+                                                    <rect key="frame" x="16" y="50.5" width="25" height="25"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="addToCalendar:" destination="J2i-Kp-Kqv" eventType="touchUpInside" id="IVH-Q7-ybd"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-cp-LIu">
+                                                    <rect key="frame" x="57" y="50.5" width="0.0" height="25"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-eQ-e0D">
+                                                    <rect key="frame" x="354" y="50" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="saveEvent:" destination="J2i-Kp-Kqv" eventType="touchUpInside" id="WUb-sB-tPm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="YA7-ij-EjQ" secondAttribute="trailing" id="1wd-jg-27E"/>
+                                                <constraint firstItem="r6C-zc-hQs" firstAttribute="leading" secondItem="eqJ-5X-iHs" secondAttribute="leading" constant="16" id="2u4-ez-x6V"/>
+                                                <constraint firstItem="w7y-cp-LIu" firstAttribute="top" secondItem="YA7-ij-EjQ" secondAttribute="bottom" id="Bhm-Zc-pD0"/>
+                                                <constraint firstItem="YA7-ij-EjQ" firstAttribute="top" secondItem="eqJ-5X-iHs" secondAttribute="top" id="D0d-iz-SQ4"/>
+                                                <constraint firstAttribute="bottom" secondItem="kFK-n0-JgI" secondAttribute="bottom" constant="16" id="HGr-7G-fMD"/>
+                                                <constraint firstAttribute="bottom" secondItem="w7y-cp-LIu" secondAttribute="bottom" constant="16" id="MVz-uw-ukC"/>
+                                                <constraint firstItem="w7y-cp-LIu" firstAttribute="leading" secondItem="r6C-zc-hQs" secondAttribute="trailing" constant="16" id="P6h-hV-TvD"/>
+                                                <constraint firstAttribute="bottom" secondItem="r6C-zc-hQs" secondAttribute="bottom" constant="16" id="U3q-6j-cji"/>
+                                                <constraint firstItem="r6C-zc-hQs" firstAttribute="top" secondItem="YA7-ij-EjQ" secondAttribute="bottom" id="URo-AB-q47"/>
+                                                <constraint firstItem="kFK-n0-JgI" firstAttribute="width" secondItem="r6C-zc-hQs" secondAttribute="width" id="VdW-Fz-uVg"/>
+                                                <constraint firstItem="YA7-ij-EjQ" firstAttribute="leading" secondItem="eqJ-5X-iHs" secondAttribute="leading" id="Xph-7E-L2z"/>
+                                                <constraint firstItem="w7y-cp-LIu" firstAttribute="leading" secondItem="kFK-n0-JgI" secondAttribute="trailing" constant="16" id="f5e-Qe-hoU"/>
+                                                <constraint firstItem="kFK-n0-JgI" firstAttribute="leading" secondItem="eqJ-5X-iHs" secondAttribute="leading" constant="16" id="ncA-fO-vrp"/>
+                                                <constraint firstItem="kFK-n0-JgI" firstAttribute="height" secondItem="r6C-zc-hQs" secondAttribute="height" id="q5o-VG-REc"/>
+                                                <constraint firstItem="kFK-n0-JgI" firstAttribute="top" secondItem="YA7-ij-EjQ" secondAttribute="bottom" id="sBU-aW-Vnw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateText" destination="w7y-cp-LIu" id="mYE-RF-OgG"/>
+                                            <outlet property="taskView" destination="YA7-ij-EjQ" id="0D3-Ft-wPP"/>
+                                            <outlet property="taskViewHeightConstraint" destination="jUa-ZQ-Lki" id="qf6-AU-ziH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -47,11 +108,18 @@
                         <viewLayoutGuide key="safeArea" id="zHv-th-JkM"/>
                     </view>
                     <navigationItem key="navigationItem" id="DGI-e1-K8G">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xup-hY-mE0">
-                            <connections>
-                                <action selector="addNewTask:" destination="NWo-a0-ycP" id="87M-jv-YaC"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Xup-hY-mE0">
+                                <connections>
+                                    <action selector="addNewTask:" destination="NWo-a0-ycP" id="87M-jv-YaC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="mwt-ra-KBJ">
+                                <connections>
+                                    <action selector="refreshEvent:" destination="NWo-a0-ycP" id="ziP-GH-w3y"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="taskTableView" destination="Hf9-0Y-Tv2" id="uHp-OY-5Ai"/>
@@ -80,4 +148,7 @@
             <point key="canvasLocation" x="-28.985507246376812" y="6.6964285714285712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="512" height="512"/>
+    </resources>
 </document>

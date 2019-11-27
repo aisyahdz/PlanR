@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80A6F562317F9DD005B40CC /* DateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A6F552317F9DD005B40CC /* DateDetector.swift */; };
+		C80A6F582317F9FB005B40CC /* DateDetectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A6F572317F9FB005B40CC /* DateDetectorTest.swift */; };
 		C86D5D0822E36E06001EB91D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D0722E36E06001EB91D /* AppDelegate.swift */; };
 		C86D5D0A22E36E06001EB91D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D0922E36E06001EB91D /* ViewController.swift */; };
 		C86D5D0F22E36E08001EB91D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D0E22E36E08001EB91D /* Assets.xcassets */; };
@@ -19,6 +21,7 @@
 		C86D5D4222FCF852001EB91D /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D4122FCF852001EB91D /* TaskTableViewCell.swift */; };
 		C86D5D44230224D7001EB91D /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86D5D43230224D7001EB91D /* TaskList.storyboard */; };
 		C86D5D4623022555001EB91D /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D5D4523022555001EB91D /* TaskListViewController.swift */; };
+		C8AE5E14234D699700E0A193 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AE5E13234D699700E0A193 /* CalendarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80A6F552317F9DD005B40CC /* DateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetector.swift; sourceTree = "<group>"; };
+		C80A6F572317F9FB005B40CC /* DateDetectorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetectorTest.swift; sourceTree = "<group>"; };
 		C86D5D0422E36E06001EB91D /* PlanR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D5D0722E36E06001EB91D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86D5D0922E36E06001EB91D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		C86D5D4122FCF852001EB91D /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		C86D5D43230224D7001EB91D /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		C86D5D4523022555001EB91D /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		C8AE5E13234D699700E0A193 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,9 @@
 			children = (
 				C86D5D3B22F09CA1001EB91D /* TaskListManager.swift */,
 				C86D5D3F22FCEBD7001EB91D /* TaskListManagerTest.swift */,
+				C80A6F552317F9DD005B40CC /* DateDetector.swift */,
+				C80A6F572317F9FB005B40CC /* DateDetectorTest.swift */,
+				C8AE5E13234D699700E0A193 /* CalendarManager.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -308,6 +317,8 @@
 				C86D5D3E22F09CEA001EB91D /* TaskReminder.swift in Sources */,
 				C86D5D0A22E36E06001EB91D /* ViewController.swift in Sources */,
 				C86D5D4222FCF852001EB91D /* TaskTableViewCell.swift in Sources */,
+				C80A6F562317F9DD005B40CC /* DateDetector.swift in Sources */,
+				C8AE5E14234D699700E0A193 /* CalendarManager.swift in Sources */,
 				C86D5D3C22F09CA1001EB91D /* TaskListManager.swift in Sources */,
 				C86D5D0822E36E06001EB91D /* AppDelegate.swift in Sources */,
 			);
@@ -319,6 +330,7 @@
 			files = (
 				C86D5D4022FCEBD7001EB91D /* TaskListManagerTest.swift in Sources */,
 				C86D5D1D22E36E08001EB91D /* PlanRTests.swift in Sources */,
+				C80A6F582317F9FB005B40CC /* DateDetectorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

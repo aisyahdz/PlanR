@@ -13,6 +13,7 @@ private var task  = [TaskItem]()
 struct TaskItem: Equatable {
     let task: String
     let dueDate: Date
+
 }
 
 
